@@ -19,10 +19,10 @@ package com.just.agentweb;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
-import android.support.annotation.IdRes;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.IdRes;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,7 +88,7 @@ public class WebParentLayout extends FrameLayout implements Provider<AbsAgentWeb
 	private void createErrorLayout() {
 		final FrameLayout mFrameLayout = new FrameLayout(getContext());
 		mFrameLayout.setBackgroundColor(Color.WHITE);
-		mFrameLayout.setId(R.id.mainframe_error_container_id);
+		mFrameLayout.setId(R.id.aw_mainframe_error_container_id);
 		if (this.mErrorView == null) {
 			LayoutInflater mLayoutInflater = LayoutInflater.from(getContext());
 			LogUtils.i(TAG, "mErrorLayoutRes:" + mErrorLayoutRes);
@@ -96,7 +96,7 @@ public class WebParentLayout extends FrameLayout implements Provider<AbsAgentWeb
 		} else {
 			mFrameLayout.addView(mErrorView);
 		}
-		ViewStub mViewStub = (ViewStub) this.findViewById(R.id.mainframe_error_viewsub_id);
+		ViewStub mViewStub = (ViewStub) this.findViewById(R.id.aw_mainframe_error_viewsub_id);
 		final int index = this.indexOfChild(mViewStub);
 		this.removeViewInLayout(mViewStub);
 		final ViewGroup.LayoutParams layoutParams = getLayoutParams();
@@ -138,7 +138,7 @@ public class WebParentLayout extends FrameLayout implements Provider<AbsAgentWeb
 
 	void hideErrorLayout() {
 		View mView = null;
-		if ((mView = this.findViewById(R.id.mainframe_error_container_id)) != null) {
+		if ((mView = this.findViewById(R.id.aw_mainframe_error_container_id)) != null) {
 			mView.setVisibility(View.GONE);
 		}
 	}

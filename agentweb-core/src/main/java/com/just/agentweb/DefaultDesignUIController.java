@@ -21,10 +21,10 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.BottomSheetDialog;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -63,7 +63,7 @@ public class DefaultDesignUIController extends DefaultUIController {
                     message,
                     Snackbar.LENGTH_SHORT,
                     Color.WHITE,
-                    mActivity.getResources().getColor(R.color.black),
+                    mActivity.getResources().getColor(R.color.aw_black),
                     null,
                     -1,
                     null);

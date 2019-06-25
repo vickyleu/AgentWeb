@@ -18,8 +18,8 @@ package com.just.agentweb;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -172,7 +172,7 @@ public class DefaultWebCreator implements WebCreator {
     private ViewGroup createLayout() {
         Activity mActivity = this.mActivity;
         WebParentLayout mFrameLayout = new WebParentLayout(mActivity);
-        mFrameLayout.setId(R.id.web_parent_layout_id);
+        mFrameLayout.setId(R.id.aw_web_parent_layout_id);
         mFrameLayout.setBackgroundColor(Color.WHITE);
         View target = mIWebLayout == null ? (this.mWebView = (WebView) createWebView()) : webLayout();
         FrameLayout.LayoutParams mLayoutParams = new FrameLayout.LayoutParams(-1, -1);
@@ -183,7 +183,7 @@ public class DefaultWebCreator implements WebCreator {
             AgentWebConfig.WEBVIEW_TYPE = AgentWebConfig.WEBVIEW_AGENTWEB_SAFE_TYPE;
         }
         ViewStub mViewStub = new ViewStub(mActivity);
-        mViewStub.setId(R.id.mainframe_error_viewsub_id);
+        mViewStub.setId(R.id.aw_mainframe_error_viewsub_id);
         mFrameLayout.addView(mViewStub, new FrameLayout.LayoutParams(-1, -1));
         if (mIsNeedDefaultProgress) {
             FrameLayout.LayoutParams lp = null;

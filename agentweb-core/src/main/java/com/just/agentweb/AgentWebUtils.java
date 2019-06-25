@@ -36,14 +36,14 @@ import android.os.Looper;
 import android.os.StatFs;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.AppOpsManagerCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.FileProvider;
-import android.support.v4.os.EnvironmentCompat;
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.app.AppOpsManagerCompat;
+import androidx.core.content.ContextCompat;
+import androidx.loader.content.CursorLoader;
+import androidx.core.content.FileProvider;
+import androidx.core.os.EnvironmentCompat;
 import android.telephony.TelephonyManager;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -717,7 +717,7 @@ public class AgentWebUtils {
 		if (activity == null || activity.isFinishing()) {
 			return;
 		}
-		WebParentLayout mWebParentLayout = (WebParentLayout) activity.findViewById(R.id.web_parent_layout_id);
+		WebParentLayout mWebParentLayout = (WebParentLayout) activity.findViewById(R.id.aw_web_parent_layout_id);
 		AbsAgentWebUIController mAgentWebUIController = mWebParentLayout.provide();
 		if (mAgentWebUIController != null) {
 			mAgentWebUIController.onShowMessage(message, from);
@@ -793,7 +793,7 @@ public class AgentWebUtils {
 		while (mViewGroup != null) {
 
 			LogUtils.i(TAG, "ViewGroup:" + mViewGroup);
-			if (mViewGroup.getId() == R.id.web_parent_layout_id) {
+			if (mViewGroup.getId() == R.id.aw_web_parent_layout_id) {
 				WebParentLayout mWebParentLayout = (WebParentLayout) mViewGroup;
 				LogUtils.i(TAG, "found WebParentLayout");
 				return mWebParentLayout;

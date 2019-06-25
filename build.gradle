@@ -10,10 +10,10 @@ buildscript {
             name 'Google'
         }
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.0'
-        classpath 'com.novoda:bintray-release:0.9'
 
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.1'
+//        classpath 'com.kezong:fat-aar:1.1.7'
     }
 }
 
@@ -36,6 +36,3 @@ tasks.withType(Javadoc) {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-//tasks.getByPath(":agentweb-core:mavenAndroidJavadocs").enabled = false
-//tasks.getByPath(":agentweb-download:mavenAndroidJavadocs").enabled = false
-//tasks.getByPath(":agentweb-filechooser:mavenAndroidJavadocs").enabled = false
